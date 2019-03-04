@@ -1,0 +1,34 @@
+@import "@material/button/mdc-button";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import "@material/switch/mdc-switch";
+@import "@material/typography/mdc-typography";
+@import "@material/card/mdc-card";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/textfield/mdc-text-field";
+@import "@material/floating-label/mdc-floating-label";
+@import "@material/form-field/mdc-form-field";
+@import "@material/checkbox/mdc-checkbox";
+
+.foo-button {
+  @include mdc-button-ink-color(teal);
+  @include mdc-states(teal);
+}
+#addPostCard {
+  height: 600px;
+  width: 600px;
+  & .mdc-text-field{
+    margin: 16px 0;
+  }
+  #textPostField{
+    margin: 20px 0;
+  }
+  #datetimePost{
+    display: none;
+  }
+}
+
+

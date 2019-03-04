@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="/static/assets/css/bundle.css">
+    <script src="/static/assets/js/bundle.js" async></script>
+
+</head>
+<body>
+
+<div class="mdc-tab-bar" role="tablist">
+    <div class="mdc-tab-scroller">
+        <div class="mdc-tab-scroller__scroll-area">
+            <div class="mdc-tab-scroller__scroll-content">
+                <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <span class="mdc-tab__icon material-icons" aria-hidden="true">add</span>
+                    <span class="mdc-tab__text-label">Добавить сообщение</span>
+                  </span>
+                    <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                    <span class="mdc-tab__ripple"></span>
+                </button>
+                <button class="mdc-tab mdc-tab" role="tab">
+                  <span class="mdc-tab__content">
+                    <span class="mdc-tab__icon material-icons" aria-hidden="true">list</span>
+                    <span class="mdc-tab__text-label">Список сообщений</span>
+                  </span>
+                    <span class="mdc-tab-indicator mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                    <span class="mdc-tab__ripple"></span>
+                </button>
+                <button class="mdc-tab mdc-tab" role="tab">
+                  <span class="mdc-tab__content">
+                    <span class="mdc-tab__icon material-icons" aria-hidden="true">feedback</span>
+                    <span class="mdc-tab__text-label">Feedback</span>
+                  </span>
+                    <span class="mdc-tab-indicator mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                    <span class="mdc-tab__ripple"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mdc-layout-grid" id="layout-1">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-10">
+            <h1 class="mdc-typography--headline3" id="title-layout-1">Добавить новый пост</h1>
+            <div class="mdc-card" id="addPostCard">
+                <div class="demo-card__primary">
+                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6" id="titleCardPost">Оформите пост</h2>
+                    <!--<h3 class="demo-card__subtitle mdc-typography mdc-typography&#45;&#45;subtitle2">by Kurt Wagner</h3>-->
+                </div>
+                <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
+                    <div class="mdc-text-field mdc-text-field--textarea text-post-field" id="textPostField">
+                        <textarea class="mdc-text-field__input" rows="8" cols="40" id="textPost" value="тело"></textarea>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="textPost" class="mdc-floating-label">Текст сообщения</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+
+                    <button class="mdc-button" id="picturePostButton">
+                        <i class="material-icons mdc-button__icon" aria-hidden="true">attach_file</i>
+                        <span class="mdc-button__label">
+                            <input type="file" name="picturePost" id="picturePost"/>
+                        </span>
+                    </button>
+
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon channel-post-field">
+                        <i class="material-icons mdc-text-field__icon">group</i>
+                        <input class="mdc-text-field__input" id="channelPost" value="gresstil">
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label class="mdc-floating-label" for="channelPost">группа/канал/пользователь</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <button class="mdc-button" id="datetimePost">
+                        <i class="material-icons mdc-button__icon" aria-hidden="true">calendar</i>
+                        <span class="mdc-button__label">
+                            <input type="datetime-local" value="2019-03-03T18:49" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}"/>
+                        </span>
+                    </button>
+                </div>
+                <div class="mdc-form-field">
+                    <div class="mdc-checkbox">
+                        <input type="checkbox"
+                               class="mdc-checkbox__native-control"
+                               id="checkbox-fb" checked/>
+                        <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark"
+                                 viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path"
+                                      fill="none"
+                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                    </div>
+                    <label for="checkbox-fb">Facebook</label>
+                </div>
+                <div class="mdc-form-field">
+                    <div class="mdc-checkbox">
+                        <input type="checkbox"
+                               class="mdc-checkbox__native-control"
+                               id="checkbox-tg" checked/>
+                        <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark"
+                                 viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path"
+                                      fill="none"
+                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                    </div>
+                    <label for="checkbox-tg">Telegram</label>
+                </div>
+                <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                        <button class="mdc-button mdc-card__action mdc-card__action--button" id="addPost">Отправить</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="mdc-layout-grid__cell--span-2">
+            <label for="basic-switch" class="mdc-typography--body2">новый </label>
+            <div class="mdc-switch">
+                <div class="mdc-switch__track"></div>
+                <div class="mdc-switch__thumb-underlay">
+                    <div class="mdc-switch__thumb">
+                        <input type="checkbox" id="basic-switch" class="mdc-switch__native-control" role="switch">
+                    </div>
+                </div>
+            </div>
+            <label for="basic-switch" class="mdc-typography--body2"> отложенный</label></div>
+    </div>
+</div>
+<div class="mdc-layout-grid" id="layout-2" style="display: none;">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">Список</div>
+        <div class="mdc-layout-grid__cell"></div>
+        <div class="mdc-layout-grid__cell"></div>
+    </div>
+</div>
+<div class="mdc-layout-grid" id="layout-3" style="display: none;">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">Фидбек</div>
+        <div class="mdc-layout-grid__cell"></div>
+        <div class="mdc-layout-grid__cell"></div>
+    </div>
+</div>
+
+</body>
+
+</html>
