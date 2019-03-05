@@ -14,6 +14,6 @@ $picturePath = \craz\botFBT\botFBT::uploadPic($picture);
 $bot = new \craz\botFBT\botFBT($fbPost,$tgPost,$deferred);
 
 if (!$deferred) {
-    //echo $bot->send($channel, $text, $picturePath);
-    $bot->savePost($channel,text,$picturePath,$deferred,$fbPost,$tgPost);
+    echo $bot->send($channel, $text, $picturePath);
+    $bot->savePost($channel,$text,$picturePath,$deferred,$fbPost,$tgPost);
 }

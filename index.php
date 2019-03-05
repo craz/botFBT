@@ -7,4 +7,8 @@
  */
 require __DIR__ . '/vendor/autoload.php';
 
-\craz\botFBT\botFBT::send("gresstil",'тестовый текст','fff');
+$config = include "config.php";
+
+$db = new \craz\botFBT\DB($config['mysqli']);
+
+print_r($db->readPost(24));

@@ -22,11 +22,14 @@ class DB
 
     public function createPost($channel, $text, $picture, $target, $neverSend = false)
     {
+        $fh = fopen($picture,'rb');
+        $file = fread($fh,filesize($picture));
         if ($neverSend) {
             $this->link->query("INSERT INTO `botFBT`.`post` (`channel`, `text`) VALUES ('gresstil', 'текст2');");
         } else {
-            $file = file_get_contents($picture);
-            $sql = "INSERT INTO `botFBT`.`post` (`channel`, `text`,`target`) VALUES ($channel,$text,$target);";
+
+            $sql = "INSERT INTO `botFBT`.`post` (`channel`, `text`,`target`,`picture`)
+            VALUES ('".$channel."','".$text."','".$target."','".addslashes($file)."');";
 
             $this->link->query($sql);
             file_put_contents(
@@ -34,5 +37,11 @@ class DB
                 var_export(['error'=>$this->link->error,'errorno'=>$this->link->errno],true),
                 FILE_APPEND);
         }
+        fclose($fh);
+    }
+    public function readPost($id){
+        $sql = "SELECT * from `botFBT`.`post` WHERE id='".$id."';";
+        $result = $this->link->query($sql);
+        return $result->fetch_assoc();
     }
 }
